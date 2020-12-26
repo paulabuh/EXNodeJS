@@ -1,0 +1,39 @@
+import Layout from "../layout.marko"
+<${Layout} titulo="Clientes">
+    <@conteudo>
+        <div class="container">
+   
+          <br><h1>Lista de Clientes</h1><br><br>
+          
+          <div>
+          <table class="table" id="clientes">
+          <thead class="thead-dark">
+            <tr>
+                <th>Alterar</th>
+                <th>Excluir</th>  
+                <th>ID</th>
+                <th>NOME</th>
+                <th>DATA ANIVERSARIO</th>
+                <th>EMAIL</th>
+                <th>CPF</th>
+            </tr>
+            </thead>
+            <tbody>
+            <for|cliente| of = data.clientes>
+                <tr>
+                    <td><a class="nav-link" href="/clientes/alteracao/${cliente.idClie}"><i class="glyphicon glyphicon-edit"></i></a></td>
+                    <td><a class="nav-link" href="/clientes/exclusao/${cliente.idClie}"><i class="glyphicon glyphicon-remove"></i></a></td>
+                    <td>${cliente.idClie}</td>
+                    <td>${cliente.nomeClie}</td>
+                    <td>${cliente.dataNiverClie}</td>
+                    <td>${cliente.emailClie}</td>
+                    <td>${cliente.cpfClie}</td>
+                </tr>
+            </for>
+          </tbody>
+          </table>
+          </div>
+   
+        </div>
+      </@conteudo>
+  </>
